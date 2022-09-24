@@ -1,16 +1,24 @@
+import React, { Suspense } from 'react'
 import './App.css'
-import Cart from './componenets/Cart/Cart'
 import Layout from './componenets/Layout/Layout'
-import ProductCard from './componenets/productCard/ProductCard'
-import ProductsList from './componenets/ProductsList/ProductsList'
+import { ImSpinner2 } from "react-icons/im"
+
+const ProductsList = React.lazy(() => import('./componenets/ProductsList/ProductsList'))
+const Cart = React.lazy(() => import('./componenets/Cart/Cart'))
+
 
 function App() {
 
   return (
     <div className="App">
       <Layout >
-        <ProductsList />
-        <Cart />
+        <Suspense fallback={<div className='loading-page'>
+          <ImSpinner2 />
+        </div>}>
+          <ProductsList />
+          <Cart />
+        </Suspense>
+
       </Layout>
     </div>
   )

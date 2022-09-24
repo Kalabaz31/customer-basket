@@ -3,5 +3,17 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    
+
+    padding: 80px 0;
+
+}
+
+
+
+@media screen and (max-width: 760px) {
+
+    .app__products-list {
+        padding: 20px 0;
+    }
+
 }

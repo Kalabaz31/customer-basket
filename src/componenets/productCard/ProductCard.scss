@@ -3,7 +3,6 @@
     gap: 20px;
     align-items: flex-start;
     max-width: 400px;
-
     box-shadow: 3px 3px 4px #c9c9c9;
     border: 1px solid #c9c9c9;
     border-radius: 10px;
@@ -29,6 +28,7 @@
         justify-content: flex-start;
         flex: 1;
         overflow: hidden;
+        gap: 10px;
 
         &>div {
             display: flex;
@@ -71,6 +71,7 @@
             justify-content: flex-end;
 
             button {
+                min-width: max-content;
                 cursor: pointer;
                 background: rgb(91, 129, 255);
                 color: white;
@@ -81,9 +82,4 @@
             }
         }
     }
-
-
-
-
-
 }

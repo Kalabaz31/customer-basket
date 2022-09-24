@@ -1,4 +1,4 @@
-import { butter_img, milk_img } from "../assets"
+import { bread_img, butter_img, milk_img } from "../assets"
 
 export const productsList = [
     {
@@ -6,7 +6,7 @@ export const productsList = [
         name: "Bread",
         desc: "made in paris and destinated to the whole world destinated to the whole world",
         cost: 1,
-        img: milk_img
+        img: bread_img
     }, {
         id: 1,
         name: "Milk",

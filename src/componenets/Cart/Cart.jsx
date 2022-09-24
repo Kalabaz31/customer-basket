@@ -1,35 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { butter_img } from '../../assets'
-import { productsList } from '../../data/productsList'
 import CartItem from '../CartItem/CartItem'
 import "./Cart.scss"
-
+import { AiOutlineShoppingCart } from "react-icons/ai"
 const Cart = () => {
-    const { cartItems } = useSelector(state => state.cart)
-    const [total, setTotal] = useState(0)
+    const { cartItems, totalDiscount } = useSelector(state => state.cart)
 
-    useEffect(() => {
-
-        if (cartItems?.length > 0) {
-            const totalPriceAfterDiscount = cartItems.reduce(
-                (previousValue, currentValue) => {
-                    let previousPrice = typeof (previousValue) === "number" ? previousValue : Number.parseFloat(previousValue.priceAfterDiscount)
-                    let currentPrice = Number.parseFloat(currentValue.priceAfterDiscount)
-                    return previousPrice + currentPrice
-                }, 0
-            );
-            setTotal(totalPriceAfterDiscount)
-        }
-
-        
-    }, [cartItems])
 
     return (
         <div className='app__cart'>
 
             <h2 className='app__cart__header'>
-                CART
+                CART <AiOutlineShoppingCart />
             </h2>
 
             {
@@ -39,7 +21,23 @@ const Cart = () => {
             }
 
             <div className="total">
-                <h5>Subtotal: {total.toFixed(2)} </h5>
+                <p>Subtotal
+                    <span>
+                        £{totalDiscount?.subTotal?.toFixed(2)}
+                    </span>
+                </p>
+
+                <p>Discount
+                    <span>
+                        £{totalDiscount?.discount?.toFixed(2)}
+                    </span>
+                </p>
+
+                <p>Total
+                    <span>
+                        £{totalDiscount?.total?.toFixed(2)}
+                    </span>
+                </p>
             </div>
 
 

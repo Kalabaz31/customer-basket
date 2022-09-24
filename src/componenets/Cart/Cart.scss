@@ -3,10 +3,44 @@
     flex-direction: column;
     justify-content: flex-start;
     background: rgb(245, 245, 245);
-    min-height: 100vh;
-    width: 100%;
-    padding: 40px;
+    min-height: calc(100vh);
+    padding: 80px 20px;
+    max-width: 600px;
+    width: 600px;
+    overflow: hidden;
+    position: relative;
 
 
+    .total {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+
+        &>p {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            color: gray;
+            font-weight: 600;
+
+            span {
+                font-size: 14;
+                color: black;
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 760px) {
+
+    .app__cart {
+        min-height: auto;
+
+        min-width: 100%;
+        padding: 20px;
+    }
 
 }

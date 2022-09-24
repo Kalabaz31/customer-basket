@@ -7,9 +7,10 @@ const Layout = ({ children }) => {
 
     return (
         <div className='app__layout'>
+            <div className="container">
+                {children}
+            </div>
 
-
-            {children}
         </div>
     )
 }
